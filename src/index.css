@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;800&family=JetBrains+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-agency-blue: #0ea5e9;
+  --color-agency-gold: #eab308;
+  --color-agency-dark: #050505;
+}
+
+@layer base {
+  body {
+    @apply bg-agency-dark text-gray-100 font-sans selection:bg-agency-blue/30;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .text-glow-blue {
+    text-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+  }
+  
+  .text-glow-gold {
+    text-shadow: 0 0 15px rgba(234, 179, 8, 0.5);
+  }
+
+  .atmosphere-bg {
+    background: radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(234, 179, 8, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 60%);
+  }
+
+  .iridescent-mesh {
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(199, 95%, 48%, 0.15) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(45, 93%, 47%, 0.1) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(199, 95%, 48%, 0.15) 0, transparent 50%);
+    background-attachment: fixed;
+  }
+}
